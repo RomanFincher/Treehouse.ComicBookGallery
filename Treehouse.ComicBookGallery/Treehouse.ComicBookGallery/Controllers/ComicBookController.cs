@@ -8,9 +8,13 @@ namespace Treehouse.ComicBookGallery.Controllers
 {
 	public class ComicBookController : Controller
 	{
-        public string Detail()
+        public ActionResult Detail()
         {
-            return "Hello from the Comic Book Controller!";
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Friday)
+            {
+                return Redirect("/");
+            }
+            return Content("Hello from the Comic Book Controller!");
         }
 	}
 }
