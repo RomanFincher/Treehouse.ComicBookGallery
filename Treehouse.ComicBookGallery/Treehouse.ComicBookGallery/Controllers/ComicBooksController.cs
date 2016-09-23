@@ -8,13 +8,18 @@ using Treehouse.ComicBookGallery.Data;
 
 namespace Treehouse.ComicBookGallery.Controllers
 {
-	public class ComicBooksController : Controller
-	{
+    public class ComicBooksController : Controller
+    {
         private ComicBookRepository _comicBookRepository;
 
         public ComicBooksController()
         {
             _comicBookRepository = new ComicBookRepository();
+        }
+        public ActionResult Index()
+        {
+            var comicBooks = _comicBookRepository.GetComicBooks();
+            return View(comicBooks);
         }
         public ActionResult Detail(int? id)
         {

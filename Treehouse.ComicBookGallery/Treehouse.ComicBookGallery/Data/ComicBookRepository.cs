@@ -58,6 +58,10 @@ namespace Treehouse.ComicBookGallery.Data
 		        Favorite = false
 	        }
 		};
+        public ComicBook[] GetComicBooks()
+        {
+            return _comicBooks;
+        }
         public ComicBook GetComicBook(int id)
         {
             return _comicBooks.Where(c => c.Id == id).SingleOrDefault();
